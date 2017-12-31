@@ -9,7 +9,7 @@
 (add-to-list 'load-path "~/.config/emacs/elisp")
 
 ;; Reasonable font size
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 100)
 
 ;; Never show startup screen
 (set 'inhibit-startup-screen t)
