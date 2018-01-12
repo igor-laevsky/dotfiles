@@ -2,7 +2,8 @@
 background = #111313
 background-alt = #282828
 foreground = #fbf1c7
-foreground-alt = #3e3c37
+#foreground-alt = #3e3c37
+foreground-alt = #726D5F
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -15,8 +16,9 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/mybar]
+bottom = true
 width = 100%
-height = 38
+height = 40
 radius = 0.0
 fixed-center = true
 dim-value = 1.0
@@ -29,25 +31,22 @@ module-margin = 1
 override-redirect = false
 
 # Fonts
-
-font-0 = "Font Awesome 5 Free:style=Regular:size=13;0"
-font-1 = "Font Awesome 5 Free:style=Solid:size=13;1"
-font-2 = "Font Awesome 5 Brands:size=13;2"
+font-0 = "Font Awesome 5 Free:style=Regular:size=13;3"
+font-1 = "Font Awesome 5 Free:style=Solid:size=13;3"
+font-2 = "Font Awesome 5 Brands:size=13;3"
 font-3 = "Roboto:pixelsize=12:weight=90;3"
-#font-1 = "Material Icons:size=13;1"
-#font-4 = "Weather Icons:pixelsize=13;2"
+font-4 = "Roboto:pixelsize=14:weight=90;3"
+font-5 = "MaterialIcons:size=15;5"
 
 # Modules
 modules-left = i3
 modules-center = xwindow
-#modules-right =  xkeyboard redshift xbacklight volume wlan battery weather date
-modules-right =  date
+modules-right = cpu memory disk volume wlan xkeyboard date 
 
 # Tray
 tray-position = right
 tray-padding = 1
 tray-transparent = false
-
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -58,172 +57,101 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-4 = 4;
 pin-workspaces = true
-strip-wsnumbers = false
+strip-wsnumbers = true
 
 label-mode = %mode%
 label-mode-padding = 3
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-label-focused = %icon%
+label-focused = %{T5}%name%%{T-}
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 3
 
-label-unfocused = %icon%
+label-unfocused = %{T5}%name%%{T-}
 label-unfocused-padding = 3
 
-label-visible = %icon%
+label-visible = %{T5}%name%%{T-}
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-label-urgent = %icon%
+label-urgent = %{T5}%name%%{T-}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 
-fuzzy-match = true
+fuzzy-match = false
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:80:...%
 label-xwindow-font = 0
 
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout = %{T5}%layout%%{T-}
+label-layout-foreground = ${colors.foreground-alt}
+
+[module/wlan]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = <label-packetloss>
+
+label-disconnected = 
+label-connected = 
+label-packetloss = 
+
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume>
+label-muted = %{T6}%{T-}
+label-muted-font = 6
+label-muted-foreground = ${colors.foreground-alt}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+
 [module/date]
 type = internal/date
 interval = 5
 time = %H:%M
-time-alt = %d.%m.%Y %H:%M:%S
+time-alt = %d %b %H:%M:%S
 label = %{O-10}%time%
 label-margin = 3
 
-# Why doesn't work?
-#format-prefix-foreground = #ffffff
-#format-underline = #ffffff
+[module/cpu]
+type = internal/cpu
+interval = 5
+label =  %percentage%%
+label-foreground = ${colors.foreground-alt}
 
-# [module/xkeyboard]
-# type = internal/xkeyboard
-# blacklist-0 = num lock
+[module/memory]
+type = internal/memory
+interval = 5
+format = <label>
+label =  %percentage_used%%
+label-foreground = ${colors.foreground-alt}
 
-# label-layout = %layout% 
-# label-layout-underline = ${colors.secondary}
-# label-layout-foreground = ${colors.foreground-alt}
-# label-indicator-background = ${colors.secondary}
-# label-indicator-underline = ${colors.secondary}
-# label-layout-margin = 1
+[module/disk]
+type = internal/fs
 
+mount-0 = /
+interval = 10
+fixed-values = true
 
-# [module/xbacklight]
-# type = internal/xbacklight
-# format = <ramp> 
-
-# ramp-0 = 
-# ramp-1 = 
-# ramp-2 = 
-
-# bar-width = 10
-# bar-indicator = |
-# bar-indicator-font = 3
-# bar-indicator-foreground = #ff
-# bar-fill = ─
-# bar-fill-font = 3
-# bar-fill-foreground = #c9665e
-# bar-empty = ─
-# bar-empty-font = 3
-# bar-empty-foreground = #44
-
-# [module/backlight-acpi]
-# inherit = module/xbacklight
-# type = internal/backlight
-# card = intel_backlight
-
-# [module/wlan]
-# type = internal/network
-# interface = wlp5s0
-# interval = 3.0
-# ping-interval = 10
-
-# format-connected = <ramp-signal>
-# label-connected = %essid%
-# label-disconnected =    not connected
-# label-disconnected-foreground = #66
-
-# ramp-signal-0 = 
-# ramp-signal-1 = 
-# ramp-signal-2 = 
-# ramp-signal-3 = 
-# ramp-signal-4 = 
-
-# animation-packetloss-0 = 
-# animation-packetloss-0-foreground = #ffa64c
-# animation-packetloss-1 = 
-# animation-packetloss-1-foreground = ${bar/top.foreground}
-# animation-packetloss-framerate = 500
-
-
-# [module/volume]
-# type = internal/volume
-
-# format-volume = <ramp-volume>
-# label-muted = 
-# label-muted-foreground = #66
-
-# ramp-volume-0 = 
-# ramp-volume-1 = 
-# ramp-volume-2 = 
-# ramp-volume-3 = 
-# label-muted-font = 3
-# ramp-volume-font = 3
-
-
-# [module/battery]
-# type = internal/battery
-# full-at = 98
-
-# format-charging = <animation-charging>
-# format-discharging = <ramp-capacity>
-# format-full = %{O2}<ramp-capacity>
-
-# ramp-capacity-0 = 
-# ramp-capacity-0-foreground = #f53c3c
-# ramp-capacity-1 = 
-# ramp-capacity-1-foreground = #ffa900
-# ramp-capacity-2 = 
-# ramp-capacity-3 = 
-# ramp-capacity-4 = 
-
-# bar-capacity-width = 10
-# bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-# bar-capacity-fill = █
-# bar-capacity-fill-foreground = #ddffffff
-# bar-capacity-fill-font = 3
-# bar-capacity-empty = █
-# bar-capacity-empty-font = 3
-# bar-capacity-empty-foreground = #44ffffff
-
-# animation-charging-0 = 
-# animation-charging-1 = 
-# animation-charging-2 = 
-# animation-charging-3 = 
-# animation-charging-4 = 
-# animation-charging-framerate = 750
-
-# [module/weather]
-# type = custom/script
-# interval = 10
-# format = <label>
-# exec = ~/.config/polybar/weather
-# format-margin = 1
-# format-offset = -3
-
-# [module/redshift]
-# type = custom/script
-# interval = 5
-# exec = ~/.config/polybar/redshift.sh
-# label-margin = 1
-
+label-mounted =  %percentage_used%%
+label-mounted-foreground = ${colors.foreground-alt}

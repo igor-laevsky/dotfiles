@@ -44,7 +44,7 @@ Xft.rgba: rgb
 
 !! red dark/light
 *color1:                S_red
-inco*color9:                S_orange
+inco*color9:            S_orange
 
 !! green dark/light
 *color2:                S_green
@@ -74,7 +74,7 @@ inco*color9:                S_orange
 !! urxvt configuration
 !!!!!!
 
-URxvt.font: xft:monospace:size=11
+URxvt.font: xft:monospace:size=13
 URxvt.scrollStyle: plain
 
 URxvt.depth: 32
