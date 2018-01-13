@@ -1,5 +1,5 @@
 [colors]
-background = #111313
+background = #99111313
 background-alt = #383838
 foreground = #fbf1c7
 #foreground-alt = #3e3c37
@@ -47,7 +47,7 @@ modules-right = cpu memory disk space volume wlan xkeyboard date
 # Tray
 tray-position = right
 tray-padding = 1
-tray-transparent = true
+tray-transparent = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
