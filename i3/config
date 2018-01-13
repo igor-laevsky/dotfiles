@@ -16,7 +16,7 @@ bindsym $mod+u gaps inner all plus 5;gaps outer all plus 5
 bindsym $mod+Shift+u gaps inner all minus 5;gaps outer all minus 5
 
 # Default font, probably not used anywhere
-font pango:monospace 13
+font pango:monospace 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -30,6 +30,13 @@ bindsym $mod+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 
 
@@ -160,12 +167,19 @@ bindsym $mod+g exec chromium
 bindsym $mod+Shift+g exec chromium --incognito
 
 # Volume
-bindsym $mod+F12 exec amixer set Master 4%+
-bindsym $mod+F11 exec amixer set Master 4%-
-bindsym $mod+F10 exec amixer set Master toggle
+bindsym $mod+F12 exec "amixer set Master 4%+; ~/.config/volnoti/show.sh"
+bindsym $mod+F11 exec "amixer set Master 4%-; ~/.config/volnoti/show.sh"
+bindsym $mod+F10 exec "amixer set Master toggle; ~/.config/volnoti/show.sh"
+
+
+
+###
+# Autostart
+###
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
+exec_always --no-startup-id "killall redshift; redshift-gtk"
+exec_always --no-startup-id "killall volnoti; volnoti"
 
 # # resize window (you can also use the mouse for that)
 # mode "resize" {
