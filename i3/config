@@ -25,12 +25,18 @@ floating_modifier $mod
 for_window [window_role="pop-up"] floating enable
 
 # reload the configuration file
-bindsym $mod+c reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Borders of a sensible color
+client.focused          #839496 #285577 #ffffff #2e9ef4   #839496
+client.focused_inactive #839496 #5f676a #ffffff #484e50   #839496
+client.unfocused        #839496 #222222 #888888 #292d2e   #839496
+client.urgent           #839496 #900000 #ffffff #900000   #839496
+client.placeholder      #839496 #0c0c0c #ffffff #000000   #839496
 
 
 ###
@@ -164,6 +170,27 @@ bindsym $mod+F12 exec "amixer set Master 4%+; ~/.config/volnoti/show.sh"
 bindsym $mod+F11 exec "amixer set Master 4%-; ~/.config/volnoti/show.sh"
 bindsym $mod+F10 exec "amixer set Master toggle; ~/.config/volnoti/show.sh"
 
+# Launcher
+bindsym $mod+space exec "rofi -show combi"
+
+# Popup calculator
+for_window [instance="calc"] floating enable
+for_window [instance="calc"] resize set 800 300
+for_window [instance="calc"] move position center
+for_window [instance="calc"] move scratchpad
+for_window [instance="calc"] border pixel 1
+exec --no-startup-id i3-sensible-terminal -name calc -e qalc
+bindsym $mod+c [instance="calc"] scratchpad show
+
+# Popup terminal
+for_window [instance="term_scratch"] floating enable
+for_window [instance="term_scratch"] resize set 1000 700
+for_window [instance="term_scratch"] move position center
+for_window [instance="term_scratch"] move scratchpad
+for_window [instance="term_scratch"] border pixel 1
+exec --no-startup-id i3-sensible-terminal -name term_scratch
+bindsym $mod+x [instance="term_scratch"] scratchpad show
+
 
 
 ###
@@ -172,7 +199,7 @@ bindsym $mod+F10 exec "amixer set Master toggle; ~/.config/volnoti/show.sh"
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id "killall redshift; redshift-gtk"
-exec_always --no-startup-id "killall volnoti; volnoti"
+exec_always --no-startup-id "killall volnoti; volnoti -a 0.7"
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "compton -b -d :0"
 
