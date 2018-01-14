@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto -alGh --group-directories-first'
 PS1='[\u:\w]\$ '
 
 function ec {
@@ -18,7 +17,11 @@ function ec {
 
   i3-msg "[class=\"Emacs\"] focus" &> /dev/null
 }
-alias emacs=ec
-export EDITOR=ec
 
+alias emacs=ec
+alias ls='ls --color=auto -alGh --group-directories-first'
+alias grep="grep --color"
+
+
+export EDITOR=ec
 export BURGAUR_FILE_MANAGER=emacs

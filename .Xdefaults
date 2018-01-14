@@ -79,7 +79,7 @@ URxvt.font: xft:monospace:size=13
 URxvt.scrollStyle: plain
 URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
-URxvt*scrollWithBuffer: true
+!URxvt*scrollWithBuffer: true
 
 URxvt.depth: 32
 URxvt.scrollBar: false
@@ -87,3 +87,6 @@ URxvt.cursorColor: white
 URxvt.intensityStyles: false
 URxvt.saveLines: 65535
 URxvt.letterSpace: -1
+
+URxvt.perl-ext-common:	default,selection-to-clipboard
+URxvt.keysym.Control-v: eval:paste_clipboard
