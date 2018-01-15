@@ -40,14 +40,20 @@ colors
 
 
 function _git_branch_name() {    
-    git branch 2>/dev/null | awk '/^\*/ { print $2 }'
+  git branch 2>/dev/null | awk '/^\*/ { print $2 }'
 }
-
 function _git_is_dirty() { 
   git diff --quiet 2> /dev/null || echo '*'
 }
+
+function _git_prompt {
+  git status &> /dev/null
+  if [[ "$?" == 0 ]]; then
+    echo "(%F{blue}$(_git_is_dirty)$(_git_branch_name)$(_git_is_dirty)%f)"
+  fi
+}
      
-RPROMPT='($(_git_is_dirty)$(_git_branch_name)$(_git_is_dirty))'
+RPROMPT='$(_git_prompt)'
 PS1='[%n:%B%F{red}%~%f%b]\$ '
 
 function ec {
