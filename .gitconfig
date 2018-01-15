@@ -1,3 +1,20 @@
 [user]
-	email = igmyrj@gmail.com
-	name = Igor Laevsky
+  email = igmyrj@gmail.com
+  name = Igor Laevsky
+[alias]
+  squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+  st = status
+[merge]
+  conflictstyle = diff3
+[rerere]
+  enabled = true
+[core]
+  editor = emacs
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true

@@ -10,3 +10,7 @@ ln -s ~/.config/.bash_profile ~/.bash_profile
 ln -s ~/.config/.bashrc ~/.bashrc
 ln -s ~/.config/.gitconfig ~/.gitconfig
 ln -s ~/.config/.xinitrc ~/.xinitrc
+
+ln -s ~/.config/.zshrc ~/.zshrc
+ln -s ~/.config/.zprofile ~/.zprofile
+ln -s ~/.config/.zcompdump ~/.zcompdump
