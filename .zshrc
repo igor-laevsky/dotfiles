@@ -31,6 +31,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt CORRECT
 # Powerfull prompt
 setopt PROMPT_SUBST
+# Consider slashes and dots as word separators
+export WORDCHARS=''
 
 autoload -Uz promptinit
 promptinit
@@ -49,7 +51,7 @@ function _git_is_dirty() {
 function _git_prompt {
   git status &> /dev/null
   if [[ "$?" == 0 ]]; then
-    echo "(%F{blue}$(_git_is_dirty)$(_git_branch_name)$(_git_is_dirty)%f)"
+    echo "%B(%F{blue}$(_git_branch_name)$(_git_is_dirty)%f)%b"
   fi
 }
      
