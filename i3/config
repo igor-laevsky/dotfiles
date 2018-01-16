@@ -173,6 +173,9 @@ bindsym $mod+F10 exec --no-startup-id "amixer set Master toggle; ~/.config/volno
 # Launcher
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
+# Calendar
+bindsym $mod+t exec --no-startup-id "chromium --app=http://calendar.google.com"
+
 # Popup calculator
 for_window [instance="calc"] floating enable
 for_window [instance="calc"] resize set 800 300
