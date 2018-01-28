@@ -40,6 +40,10 @@ promptinit
 autoload -U colors
 colors
 
+setopt autopushd
+
+bindkey '^[h' backward-kill-word
+
 
 function _git_branch_name() {    
   git branch 2>/dev/null | awk '/^\*/ { print $2 }'

@@ -27,6 +27,9 @@ class FocusWatcher:
 
     def on_window_focus(self, i3conn, event):
         with self.window_list_lock:
+            if event.container.props.name.startswith('igor_scratch_'):
+                return
+            
             window_id = event.container.props.id
             if window_id in self.window_list:
                 self.window_list.remove(window_id)

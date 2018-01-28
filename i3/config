@@ -38,6 +38,10 @@ client.unfocused        #839496 #222222 #888888 #292d2e   #839496
 client.urgent           #839496 #900000 #ffffff #900000   #839496
 client.placeholder      #839496 #0c0c0c #ffffff #000000   #839496
 
+# Created problems with the non-modal popus in CLion
+focus_follows_mouse no
+
+
 
 ###
 # Window management
@@ -177,22 +181,27 @@ bindsym $mod+space exec --no-startup-id "rofi -show combi"
 bindsym $mod+t exec --no-startup-id "chromium --app=http://calendar.google.com"
 
 # Popup calculator
-for_window [instance="calc"] floating enable
-for_window [instance="calc"] resize set 800 300
-for_window [instance="calc"] move position center
-for_window [instance="calc"] move scratchpad
-for_window [instance="calc"] border pixel 1
-exec --no-startup-id i3-sensible-terminal -name calc -e qalc
-bindsym $mod+c [instance="calc"] scratchpad show
+set $calc_name igor_scratch_calc
+for_window [instance="$calc_name"] floating enable
+for_window [instance="$calc_name"] resize set 800 300
+for_window [instance="$calc_name"] move position center
+for_window [instance="$calc_name"] move scratchpad
+for_window [instance="$calc_name"] border pixel 1
+exec --no-startup-id i3-sensible-terminal -name "$calc_name" -title "$calc_name" -e qalc
+bindsym $mod+c [instance="$calc_name"] scratchpad show
 
 # Popup terminal
-for_window [instance="term_scratch"] floating enable
-for_window [instance="term_scratch"] resize set 1000 700
-for_window [instance="term_scratch"] move position center
-for_window [instance="term_scratch"] move scratchpad
-for_window [instance="term_scratch"] border pixel 1
-exec --no-startup-id i3-sensible-terminal -name term_scratch
-bindsym $mod+x [instance="term_scratch"] scratchpad show
+set $term_name igor_scratch_term
+for_window [instance="$term_name"] floating enable
+for_window [instance="$term_name"] resize set 1000 700
+for_window [instance="$term_name"] move position center
+for_window [instance="$term_name"] move scratchpad
+for_window [instance="$term_name"] border pixel 1
+exec --no-startup-id i3-sensible-terminal -name "$term_name" -title "$term_name"
+bindsym $mod+x [instance="$term_name"] scratchpad show
+
+# Thunar should always float
+for_window [class="Thunar"] floating enable
 
 
 
