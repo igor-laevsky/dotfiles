@@ -14,3 +14,5 @@ ln -s ~/.config/.xinitrc ~/.xinitrc
 ln -s ~/.config/.zshrc ~/.zshrc
 ln -s ~/.config/.zprofile ~/.zprofile
 ln -s ~/.config/.zcompdump ~/.zcompdump
+
+ln -s ~/.config/.asoundrc ~/.asoundrc

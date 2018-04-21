@@ -74,9 +74,12 @@ function ec {
 }
 
 alias emacs=ec
-alias ls='ls --color=auto -alGh --group-directories-first'
+alias ls='LC_COLLATE=C ls --color=auto -alGh --group-directories-first'
 alias grep="grep --color"
 
 
 export EDITOR=ec
 export BURGAUR_FILE_MANAGER=emacs
+
+# Posix time output
+TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'

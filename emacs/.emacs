@@ -221,6 +221,12 @@
      (buffer-file-name (nth 1 marked-files))
      (buffer-file-name (nth 2 marked-files)))))
 
+(global-set-key (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(global-subword-mode 1)
+
+
+
 ;; Clang format
 ;(require 'clang-format)
 ;(global-set-key [C-M-tab] 'clang-format-region)
