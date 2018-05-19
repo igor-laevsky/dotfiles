@@ -1,11 +1,20 @@
 ;; Initialize packages
 (require 'package)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/")
-	     '("melpa" . "http://melpa.org/packages/"))
+	     ;'("marmalade" . "https://marmalade-repo.org/packages/")
+	     '("melpa" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
-;; Set default directories
+;; Pop-up auto completion
+(global-company-mode)
+(setq company-idle-delay nil)
+(global-set-key (kbd "M-/") #'company-complete)
+(eval-after-load 'company
+  '(progn
+     (define-key company-active-map (kbd "C-n") 'company-select-next)
+     (define-key company-active-map (kbd "C-p") 'company-select-previous)))
+
+;; mode default directories
 (add-to-list 'load-path "~/.config/emacs/elisp")
 
 ;; Reasonable font size
@@ -225,9 +234,32 @@
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-subword-mode 1)
 
+;; CIDER
+(setq cider-font-lock-dynamically '(macro core function var))
+(setq cider-jdk-src-paths '("/usr/lib/jvm/java-8-openjdk/"
+                            "/home/igor/work/Clojure/clojure-1.8.0-sources.jar"
+                            "/home/igor/work/Clojure/"))
 
 
 ;; Clang format
 ;(require 'clang-format)
 ;(global-set-key [C-M-tab] 'clang-format-region)
 ;(setq clang-format-executable "/usr/local/bin/clang-format")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (solarized-light)))
+ '(custom-safe-themes
+   (quote
+    ("e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+ '(package-selected-packages (quote (company cider solarized-theme flx-ido))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
