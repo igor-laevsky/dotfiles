@@ -41,6 +41,7 @@ autoload -U colors
 colors
 
 setopt autopushd
+unsetopt correct_all
 
 bindkey '^[h' backward-kill-word
 
@@ -74,9 +75,8 @@ function ec {
 }
 
 alias emacs=ec
-alias ls='LC_COLLATE=C ls --color=auto -alGh --group-directories-first'
+alias ll='LC_COLLATE=C ls --color=auto -alGh --group-directories-first'
 alias grep="grep --color"
-
 
 export EDITOR=ec
 export BURGAUR_FILE_MANAGER=emacs

@@ -1,6 +1,6 @@
 configuration {
-	modi: "run,window";
-	combi-modi: "window,run";
+	modi: "run";
+	combi-modi: "run";
 	kb-remove-word-back: "Alt+BackSpace";
 	kb-remove-word-forward: "Alt+d";
 /*	width: 50;*/
@@ -134,4 +134,4 @@ configuration {
 /*	me-accept-entry: "MouseD1";*/
 /*	me-accept-custom: "Control+MouseD1";*/
 }
-@import "/usr/share/rofi/themes/solarized.rasi"
+@import "/usr/share/rofi/themes/solarized_alternate.rasi"

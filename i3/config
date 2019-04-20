@@ -52,8 +52,8 @@ focus_follows_mouse no
 bindsym $mod+q kill
 
 # Focus back and forth
-exec --no-startup-id ~/.config/i3/scripts/focus-last.py
-bindsym $mod+Tab exec --no-startup-id ~/.config/i3/scripts/focus-last.py --switch
+# exec --no-startup-id ~/.config/i3/scripts/focus-last.py
+# bindsym $mod+Tab exec --no-startup-id ~/.config/i3/scripts/focus-last.py --switch
 
 
 # Cycle through the visible windows
