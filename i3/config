@@ -51,11 +51,6 @@ focus_follows_mouse no
 # Kill focused window
 bindsym $mod+q kill
 
-# Focus back and forth
-# exec --no-startup-id ~/.config/i3/scripts/focus-last.py
-# bindsym $mod+Tab exec --no-startup-id ~/.config/i3/scripts/focus-last.py --switch
-
-
 # Cycle through the visible windows
 bindsym $mod+b exec --no-startup-id ~/.config/i3/scripts/focus-next-visible.py
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/focus-next-visible.py reverse
@@ -150,13 +145,12 @@ bindsym $alt+Shift+9 move container to workspace 9; workspace 9
 bindsym $alt+Shift+0 move container to workspace 10; workspace 10
 
 # Dedicated workspaces
-assign [class="Chromium"] $ws1
+assign [class="Google-chrome"] $ws1
 assign [class="URxvt"] $ws2
 assign [class="Emacs"] $ws3
 for_window [class="URxvt"] focus
 for_window [class="Emacs"] focus
-for_window [class="Chromium"] focus
-
+for_window [class="Google-chrome"] focus
 
 
 ###
@@ -167,8 +161,8 @@ for_window [class="Chromium"] focus
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # Browser
-bindsym $mod+g exec --no-startup-id chromium
-bindsym $mod+Shift+g exec --no-startup-id chromium --incognito
+bindsym $mod+g exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable --incognito
 
 # Volume
 bindsym $mod+F12 exec --no-startup-id "amixer set Master 4%+; ~/.config/volnoti/show.sh"

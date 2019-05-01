@@ -25,5 +25,8 @@ fi
 xset s off
 xset -dpms
 
+# Set up keyboard layout
+setxkbmap -model pc105 -layout "us,ru" -option "grp:lctrl_lwin_toggle,ctrl:nocaps"
+
 #exec i3 >~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 exec i3
