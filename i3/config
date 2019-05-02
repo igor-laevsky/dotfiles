@@ -169,6 +169,10 @@ bindsym $mod+F12 exec --no-startup-id "~/.config/volnoti/vol.sh up"
 bindsym $mod+F11 exec --no-startup-id "~/.config/volnoti/vol.sh down"
 bindsym $mod+F10 exec --no-startup-id "~/.config/volnoti/vol.sh mute"
 
+# Brightness
+bindsym $mod+F6 exec --no-startup-id "~/.config/volnoti/brightness.sh up"
+bindsym $mod+F5 exec --no-startup-id "~/.config/volnoti/brightness.sh down"
+
 # Launcher
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
