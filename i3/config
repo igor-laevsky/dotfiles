@@ -211,8 +211,10 @@ for_window [class="Thunar"] floating enable
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id "killall redshift; redshift-gtk"
 exec_always --no-startup-id "killall volnoti; volnoti -a 0.7"
+exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id "compton --xrender-sync --xrender-sync-fence -b"
 exec --no-startup-id "nitrogen --restore"
+
 
 # # resize window (you can also use the mouse for that)
 # mode "resize" {
