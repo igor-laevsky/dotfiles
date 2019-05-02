@@ -16,3 +16,5 @@ ln -s ~/.config/.zprofile ~/.zprofile
 ln -s ~/.config/.zcompdump ~/.zcompdump
 
 ln -s ~/.config/.asoundrc ~/.asoundrc
+
+sudo ln -s ~/.config/touchpad/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
