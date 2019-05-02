@@ -165,9 +165,9 @@ bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable --incognito
 
 # Volume
-bindsym $mod+F12 exec --no-startup-id "~/.config/volnoti/vol.sh up"
-bindsym $mod+F11 exec --no-startup-id "~/.config/volnoti/vol.sh down"
-bindsym $mod+F10 exec --no-startup-id "~/.config/volnoti/vol.sh mute"
+bindsym $mod+F3 exec --no-startup-id "~/.config/volnoti/vol.sh up"
+bindsym $mod+F2 exec --no-startup-id "~/.config/volnoti/vol.sh down"
+bindsym $mod+F1 exec --no-startup-id "~/.config/volnoti/vol.sh mute"
 
 # Brightness
 bindsym $mod+F6 exec --no-startup-id "~/.config/volnoti/brightness.sh up"
