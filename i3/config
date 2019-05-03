@@ -182,17 +182,17 @@ bindsym $mod+t exec --no-startup-id "chromium --app=http://calendar.google.com"
 # Popup calculator
 set $calc_name igor_scratch_calc
 for_window [instance="$calc_name"] floating enable
-for_window [instance="$calc_name"] resize set 800 300
+for_window [instance="$calc_name"] resize set 2000 1400
 for_window [instance="$calc_name"] move position center
 for_window [instance="$calc_name"] move scratchpad
 for_window [instance="$calc_name"] border pixel 1
-exec --no-startup-id i3-sensible-terminal -name "$calc_name" -title "$calc_name" -e qalc
+exec --no-startup-id i3-sensible-terminal -name "$calc_name" -title "$calc_name" -e python
 bindsym $mod+c [instance="$calc_name"] scratchpad show
 
 # Popup terminal
 set $term_name igor_scratch_term
 for_window [instance="$term_name"] floating enable
-for_window [instance="$term_name"] resize set 1000 700
+for_window [instance="$term_name"] resize set 2000 1400
 for_window [instance="$term_name"] move position center
 for_window [instance="$term_name"] move scratchpad
 for_window [instance="$term_name"] border pixel 1
