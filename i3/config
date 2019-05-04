@@ -111,18 +111,14 @@ bindsym $mod+a focus parent
 # Workspace management
 ###
 
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-
 # Workspace back and forth (maybe redundant with due to focus back and forth)
 workspace_auto_back_and_forth yes
 bindsym $mod+o workspace back_and_forth
 
 # Switch to workspace
-bindsym $alt+1 workspace $ws1
-bindsym $alt+2 workspace $ws2
-bindsym $alt+3 workspace $ws3
+bindsym $alt+1 workspace 1
+bindsym $alt+2 workspace 2
+bindsym $alt+3 workspace 3
 bindsym $alt+4 workspace 4
 bindsym $alt+5 workspace 5
 bindsym $alt+6 workspace 6
@@ -132,10 +128,10 @@ bindsym $alt+9 workspace 9
 bindsym $alt+0 workspace 10
 
 # Move focused container to workspace
-bindsym $alt+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $alt+Shift+1 move container to workspace 1; workspace 1
 
-bindsym $alt+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $alt+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $alt+Shift+2 move container to workspace 2; workspace 2
+bindsym $alt+Shift+3 move container to workspace 3; workspace 3
 bindsym $alt+Shift+4 move container to workspace 4; workspace 4
 bindsym $alt+Shift+5 move container to workspace 5; workspace 5
 bindsym $alt+Shift+6 move container to workspace 6; workspace 6
@@ -145,9 +141,9 @@ bindsym $alt+Shift+9 move container to workspace 9; workspace 9
 bindsym $alt+Shift+0 move container to workspace 10; workspace 10
 
 # Dedicated workspaces
-assign [class="Google-chrome"] $ws1
-assign [class="URxvt"] $ws2
-assign [class="Emacs"] $ws3
+assign [class="Google-chrome"] 1
+assign [class="URxvt"] 2
+assign [class="Emacs"] 3
 for_window [class="URxvt"] focus
 for_window [class="Emacs"] focus
 for_window [class="Google-chrome"] focus

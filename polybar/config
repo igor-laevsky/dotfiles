@@ -18,7 +18,7 @@ margin-bottom = 5
 [bar/mybar]
 bottom = true
 width = 100%
-height = 40
+height = 80
 radius = 0.0
 fixed-center = true
 dim-value = 1.0
@@ -29,6 +29,7 @@ line-color = #f00
 border-size = 0
 module-margin = 3
 override-redirect = false
+dpi = 240
 
 # Fonts
 font-0 = "Font Awesome 5 Free:style=Regular:size=13;3"
@@ -42,12 +43,11 @@ font-6 = "monospace:size=14;3"
 # Modules
 modules-left = i3
 modules-center = xwindow
-modules-right = cpu memory disk space volume wlan xkeyboard date 
+modules-right = cpu memory disk space volume wireless-network xkeyboard date 
 
 # Tray
 tray-position = right
 tray-padding = 1
-tray-transparent = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -62,17 +62,17 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-mode = %mode%
-label-mode-padding = 3
+label-mode-padding = 4
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 label-focused = %{T5}%name%%{T-}
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
-label-focused-padding = 3
+label-focused-padding = 4
 
 label-unfocused = %{T5}%name%%{T-}
-label-unfocused-padding = 3
+label-unfocused-padding = 4
 
 label-visible = %{T5}%name%%{T-}
 label-visible-background = ${self.label-focused-background}
@@ -81,7 +81,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 label-urgent = %{T5}%name%%{T-}
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 3
+label-urgent-padding = 4
 
 fuzzy-match = false
 
@@ -97,9 +97,9 @@ blacklist-0 = num lock
 label-layout = %{T7}%layout%%{T-}
 label-layout-foreground = ${colors.foreground}
 
-[module/wlan]
+[module/wireless-network]
 type = internal/network
-interface = enp2s0
+interface = wlp0s20f3
 interval = 3.0
 ping-interval = 10
 
@@ -113,13 +113,12 @@ label-packetloss = 
 
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
 
 format-muted = <label-muted>
 label-muted = %{T6}%{T-}
 label-muted-font = 6
 label-muted-foreground = ${colors.foreground-alt}
-
 
 format-volume = <ramp-volume>
 ramp-volume-0 = 

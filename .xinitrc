@@ -25,6 +25,8 @@ fi
 xset s off
 xset -dpms
 
+xrandr --dpi 240
+
 # Set up keyboard layout
 setxkbmap -model pc105 -layout "us,ru" -option "grp:lctrl_lwin_toggle,ctrl:nocaps"
 
