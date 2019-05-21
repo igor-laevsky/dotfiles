@@ -99,7 +99,8 @@ label-layout-foreground = ${colors.foreground}
 
 [module/wlan]
 type = internal/network
-interface = enp2s0
+#interface = enp2s0
+interface = wlan0
 interval = 3.0
 ping-interval = 10
 
