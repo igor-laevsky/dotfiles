@@ -78,7 +78,7 @@ inco*color9:            S_orange
 !! urxvt configuration
 !!!!!!
 
-URxvt.font: xft:monospace:size=13
+URxvt.font: xft:monospace:size=11
 
 URxvt.scrollStyle: plain
 URxvt*scrollTtyOutput: false

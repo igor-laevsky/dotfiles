@@ -22,6 +22,5 @@ alias emacs=ec
 alias ls='ls --color=auto -alGh --group-directories-first'
 alias grep="grep --color"
 
-
 export EDITOR=ec
 export BURGAUR_FILE_MANAGER=emacs

@@ -1,0 +1,3 @@
+.Xdefaults
+.xinit
+polybar config

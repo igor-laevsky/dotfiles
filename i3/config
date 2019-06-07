@@ -8,7 +8,7 @@ set $alt Mod1
 
 # Gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 15
+gaps inner 8
 gaps outer 0
 smart_gaps on
 hide_edge_borders both
@@ -69,7 +69,7 @@ bindsym $mod+Right focus right
 # Move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 bindsym $mod+Shift+Left move left
@@ -153,6 +153,9 @@ for_window [class="Google-chrome"] focus
 # Applications
 ###
 
+# Screen lock
+bindsym $mod+Shift+l exec  --no-startup-id loginctl lock-session $XDG_SESSION_ID
+
 # Terminal
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
@@ -173,7 +176,7 @@ bindsym $mod+F5 exec --no-startup-id "~/.config/volnoti/brightness.sh down"
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
 # Calendar
-bindsym $mod+t exec --no-startup-id "chromium --app=http://calendar.google.com"
+bindsym $mod+t exec --no-startup-id "google-chrome-stable --app=http://calendar.google.com"
 
 # Popup calculator
 set $calc_name igor_scratch_calc
@@ -210,7 +213,7 @@ exec_always --no-startup-id "killall volnoti; volnoti -a 0.7"
 exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id "compton --xrender-sync --xrender-sync-fence -b"
 exec --no-startup-id "nitrogen --restore"
-
+exec --no-startup-id "xss-lock -l -- i3lock -n"
 
 # # resize window (you can also use the mouse for that)
 # mode "resize" {

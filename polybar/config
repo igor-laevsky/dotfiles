@@ -29,7 +29,7 @@ line-color = #f00
 border-size = 0
 module-margin = 3
 override-redirect = false
-dpi = 240
+dpi = 192
 
 # Fonts
 font-0 = "Font Awesome 5 Free:style=Regular:size=13;3"
@@ -43,7 +43,7 @@ font-6 = "monospace:size=14;3"
 # Modules
 modules-left = i3
 modules-center = xwindow
-modules-right = cpu memory disk space volume wireless-network xkeyboard date 
+modules-right = battery cpu memory disk space volume wireless-network xkeyboard date
 
 # Tray
 tray-position = right
@@ -163,3 +163,19 @@ fixed-values = true
 
 label-mounted =  %percentage_used%%
 label-mounted-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+label-charging = %percentage%%
+label-full = %percentage%%
+label-discharging = %percentage%%
+
+# [module/redshift]
+# type = custom/script
+# exec = ~/.config/polybar/scripts/redshift-temp.sh
+# interval = 5
+
