@@ -148,6 +148,9 @@ for_window [class="URxvt"] focus
 for_window [class="Emacs"] focus
 for_window [class="Google-chrome"] focus
 
+# Toggle monitors
+bindsym $mod+m move workspace to output right
+
 
 ###
 # Applications

@@ -26,9 +26,10 @@ xset s on
 xset s 300
 xset +dpms
 xset dpms 900 900
+# xss-lock is started in i3 config
 
 # HiDpi
-xrandr --dpi 240
+xrandr --dpi 96
 export GDK_SCALE=2.5
 export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
