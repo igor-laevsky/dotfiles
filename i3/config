@@ -77,7 +77,16 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-
+bindsym $mod+1 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 1"
+bindsym $mod+2 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 2"
+bindsym $mod+3 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 3"
+bindsym $mod+4 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 4"
+bindsym $mod+5 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 5"
+bindsym $mod+6 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 6"
+bindsym $mod+7 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 7"
+bindsym $mod+8 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 8"
+bindsym $mod+9 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 9"
+bindsym $mod+0 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 0"
 
 ###
 # Container management
@@ -151,6 +160,9 @@ for_window [class="Google-chrome"] focus
 # Toggle monitors
 bindsym $mod+m move workspace to output right
 
+# Toggle monitor layout
+bindsym $mod+F9 exec --no-startup-id "~/.config/layout.sh single"
+bindsym $mod+F10 exec --no-startup-id "~/.config/layout.sh dual-1200"
 
 ###
 # Applications
@@ -205,18 +217,18 @@ bindsym $mod+x [instance="$term_name"] scratchpad show
 for_window [class="Thunar"] floating enable
 
 
-
 ###
 # Autostart
 ###
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id "killall redshift; redshift-gtk"
 exec_always --no-startup-id "killall volnoti; volnoti -a 0.7"
+exec --no-startup-id "killall redshift; while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done; redshift-gtk"
 exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id "compton --xrender-sync --xrender-sync-fence -b"
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "xss-lock -l -- i3lock -n"
+exec --no-startup-id "nm-applet"
 
 # # resize window (you can also use the mouse for that)
 # mode "resize" {
