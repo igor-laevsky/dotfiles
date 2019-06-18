@@ -61,21 +61,17 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# (Never used if)
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
-# Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Move focused window (never used it)
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
 
 bindsym $mod+1 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 1"
 bindsym $mod+2 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 2"
@@ -93,7 +89,7 @@ bindsym $mod+0 exec --no-startup-id "~/.config/i3/scripts/switch-to-num.py 0"
 ###
 
 # Split style
-bindsym $mod+h split h
+#bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+s layout toggle split
 
@@ -158,7 +154,7 @@ for_window [class="Emacs"] focus
 for_window [class="Google-chrome"] focus
 
 # Toggle monitors
-bindsym $mod+m move workspace to output right
+bindsym $alt+m move workspace to output right
 
 # Toggle monitor layout
 bindsym $mod+F9 exec --no-startup-id "~/.config/layout.sh single"

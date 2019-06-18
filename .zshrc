@@ -59,6 +59,10 @@ function _git_prompt {
     echo "%B(%F{blue}$(_git_branch_name)$(_git_is_dirty)%f)%b"
   fi
 }
+
+function precmd() {
+  printf "\x1b]0;%s\x07" "$PWD"
+}
      
 RPROMPT='$(_git_prompt)'
 PS1='[%n:%B%F{red}%~%f%b]\$ '

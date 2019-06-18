@@ -18,5 +18,9 @@ case "$1" in
     nitrogen --restore
     #~/.config/polybar/launch.sh
     ;;
+
+  apple-keyboard)
+    echo "1" | sudo tee /sys/module/hid\_apple/parameters/swap_opt_cmd
+    ;;
 esac
 
