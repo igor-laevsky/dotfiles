@@ -226,9 +226,9 @@ for_window [class="Thunar"] floating enable
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id "killall volnoti; volnoti -a 0.7"
+exec --no-startup-id "compton --xrender-sync --xrender-sync-fence -b"
 exec --no-startup-id "killall redshift; while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done; redshift-gtk"
 exec --no-startup-id "libinput-gestures-setup start"
-exec --no-startup-id "compton --xrender-sync --xrender-sync-fence -b"
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "xss-lock -l -- i3lock -n"
 exec --no-startup-id "nm-applet"
