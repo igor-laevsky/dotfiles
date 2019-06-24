@@ -80,8 +80,8 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
+# Urgent marks are too intrusive
 label-urgent = %{T5}%name%%{T-}
-label-urgent-background = ${colors.alert}
 label-urgent-padding = 4
 
 fuzzy-match = false
