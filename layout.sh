@@ -21,6 +21,7 @@ case "$1" in
 
   apple-keyboard)
     echo "1" | sudo tee /sys/module/hid\_apple/parameters/swap_opt_cmd
+    echo "2" | sudo tee /sys/module/hid_apple/parameters/fnmode     # F-keys didn't work
+    echo "0" | sudo tee /sys/module/hid_apple/parameters/iso_layout # Fix ~ key position
     ;;
 esac
-
