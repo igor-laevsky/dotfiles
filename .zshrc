@@ -87,3 +87,5 @@ export BURGAUR_FILE_MANAGER=emacs
 
 # Posix time output
 TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
+
+source ~/tools/utils.sh

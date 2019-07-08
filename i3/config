@@ -166,6 +166,7 @@ bindsym $alt+m move workspace to output right
 # Toggle monitor layout
 bindsym $mod+F9 exec --no-startup-id "~/.config/layout.sh single"
 bindsym $mod+F10 exec --no-startup-id "~/.config/layout.sh dual-1200"
+bindsym $mod+F11 exec --no-startup-id "~/.config/layout.sh dual-work"
 
 ###
 # Applications
