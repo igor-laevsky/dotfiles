@@ -41,6 +41,7 @@
 ;; Disable saving backup files
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 ;; Human friendly kill buffer
 (defun kill-buffer-and-its-windows (buffer)
