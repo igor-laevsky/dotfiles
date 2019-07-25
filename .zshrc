@@ -18,8 +18,8 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
-setopt appendhistory autocd
-unsetopt beep extendedglob nomatch notify
+setopt inc_append_history autocd
+unsetopt beep extendedglob nomatch notify share_history
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
