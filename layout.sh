@@ -4,8 +4,10 @@ export DISPLAY=":0"
 
 case "$1" in
   single)
-    xrandr --fb 1920x1080 --output HDMI-0 --off --output DP-2 --mode 3840x2160 --pos 0x0 --rotate normal --scale 0.5 --filter nearest
-    xrandr --output DP-2 --panning 0x0+0+0
+    #xrandr --fb 1920x1080 --output HDMI-0 --off --output DP-2 --mode 3840x2160 --pos 0x0 --rotate normal --scale 0.5 --filter nearest
+    #xrandr --output DP-2 --panning 0x0+0+0
+    nvidia-settings --assign "CurrentMetaMode=DPY-3: nvidia-auto-select @1920x1080 +0+0
+      {Transform=(0.500000,0.000000,0.000000,0.000000,0.500000,0.000000,0.000000,0.000000,1.000000), ViewPortIn=1920x1080, ViewPortOut=3840x2160+0+0, ResamplingMethod=Nearest}"
     nitrogen --restore
     #~/.config/polybar/launch.sh
     ;;

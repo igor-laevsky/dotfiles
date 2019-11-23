@@ -199,6 +199,11 @@
 ;; Indentation
 (add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
 (setq sh-basic-offset '2)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(add-hook 'python-mode-hook '(lambda () 
+ (setq python-indent 2)))
+
 
 ;; Show matching parens
 (show-paren-mode t)
